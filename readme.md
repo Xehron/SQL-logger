@@ -24,10 +24,6 @@ CREATE TABLE dbo.proc_logs(
 Target table of this stored procedure needs to be edited before use so that it references your table. 
 Currently it uses testing.dbo.proc_logs as target table.
 
-![](../../../Pictures/target_tbl4.png)
-![](../../../Pictures/target_tbl1.png)
-![](../../../Pictures/target_tbl2.png)
-![](../../../Pictures/target_tbl3.png)
 
 ## Example
 
@@ -62,9 +58,14 @@ EXEC dbo.logger
 ```sql
 SELECT * FROM testing.dbo.proc_logs;
 ```
-![](../../../Pictures/log.png)
+|log_id	|created_at	           |finished_at	         |proc_name	    |status	   |session_username	|error_message	|proc_params	                |proc_outputs
+|---	|---	           |---	         |---	    |---	   |---	|---	|---	                |---
+|1	    |2022-04-14 23:15:05   |2022-04-14 23:15:05	 |dbo.load_data	|complete  |dbo		            |               |@metric_name='test',@value=100	|Some output
 
 ```sql
 SELECT * FROM testing.dbo.proc_logs;
 ```
-![](../../../Pictures/data_tbl.png)
+
+|log_id    |created_at          |metric_name      |value     |
+|----------|--------------------|-----------------|----------|
+|1         |2022-04-14 23:15:05 |test             |100       |

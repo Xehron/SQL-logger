@@ -63,7 +63,7 @@ SELECT * FROM testing.dbo.proc_logs;
 |1	    |2022-04-14 23:15:05   |2022-04-14 23:15:05	 |dbo.load_data	|complete  |dbo		            |               |@metric_name='test',@value=100	|Some output
 
 ```sql
-SELECT * FROM testing.dbo.proc_logs;
+SELECT * FROM testing.dbo.data_table;
 ```
 
 |log_id    |created_at          |metric_name      |value     |
